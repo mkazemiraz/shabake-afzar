@@ -18,3 +18,7 @@ textarea {
 h1 {
   font-weight: bold;
 }
+
+.ag-theme-alpine .ag-header {
+  font-family: IRANSans !important;
+}
