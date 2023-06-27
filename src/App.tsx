@@ -52,13 +52,6 @@ function App() {
       createTheme(
         {
           direction: "rtl",
-          palette: {
-            primary: {
-              main: "#407BFF",
-              light: "#E9F3FF",
-              dark: "#193E92",
-            },
-          },
           typography: {
             fontFamily: "IRANSans",
             allVariants: {
