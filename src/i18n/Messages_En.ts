@@ -12,6 +12,10 @@ export default {
   Confirm: "Confirm",
   Dismiss: "Dismiss",
   WelcomeMessage: "Welcome",
+  ProductNotFound: "No Product Found.",
+  id: "id",
+  title: "title",
+  price: "price",
   Messages: {
     ThisFieldIsRequired: "This field is required.",
     LoginSuccess: "You have successfully logged in.",

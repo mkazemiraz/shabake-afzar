@@ -12,6 +12,10 @@ export default {
   Confirm: "تایید",
   Dismiss: "انصراف",
   WelcomeMessage: "خوش آمدید",
+  ProductNotFound: "محصولی یافت نشد",
+  id: "شناسه محصول",
+  title: "عنوان محصول",
+  price: "قیمت محصول",
   Messages: {
     ThisFieldIsRequired: "این فیلد الزامی می‌باشد.",
     LoginSuccess: "با موفقیت وارد شدید.",

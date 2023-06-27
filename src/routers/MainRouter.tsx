@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import MainTemplate from "../components/template";
 import NotFound from "../components/common/NotFound";
