@@ -7,11 +7,9 @@ import {
   TableCell,
   TableBody,
   useTheme,
-  Button,
   Skeleton,
   Alert,
   Box,
-  IconButton,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 interface ITableProps {
@@ -20,15 +18,9 @@ interface ITableProps {
   tableColumns: { title: string; field: string; style?: object }[]; // title: name of column, field: property name
   tableLabel: string; // table label that uses for tests
   emptyTableMessage: string; // message that shows when table is empty
-  actions?: {
-    icon: JSX.Element;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    handler: (value: any) => void;
-  }[]; // last column
   tableStyle?: object;
   isLoading?: boolean;
   isError?: boolean;
-  hasCollaps?: boolean;
 }
 
 export default function ITable(props: ITableProps) {
@@ -43,35 +35,19 @@ export default function ITable(props: ITableProps) {
           mt: 2,
           p: 3,
           boxSizing: "border-box",
-          backgroundColor: theme.palette.secondary.light,
         }}
       >
         <Table
           sx={{
             minWidth: 680,
             tableLayout: "fixed",
-            borderCollapse: "separate",
-            borderSpacing: "0px 15px",
           }}
           aria-label={props.tableLabel}
         >
           <TableHead sx={{ mb: 2 }}>
             <TableRow
               sx={{
-                backgroundColor: theme.palette.common.white,
-                border: 0,
-                boxShadow:
-                  "4px 4px 8px 0px rgba(241, 243, 245, 0.8), -4px -1px 8px 0px rgba(241, 243, 245, 0.8)",
-                "&:last-child td, &:last-child th": {
-                  border: 0,
-                  borderRadius: "0px 10px 10px 0px",
-                },
-                "& td:first-of-type, & th:first-of-type": {
-                  borderRadius: "10px 0px 0px 10px",
-                },
-                "& td, & th": {
-                  p: 1,
-                },
+                backgroundColor: theme.palette.grey[400],
               }}
             >
               {props.tableColumns.map((header) => (
@@ -86,9 +62,6 @@ export default function ITable(props: ITableProps) {
                   {header.title}
                 </TableCell>
               ))}
-              {props.actions && (
-                <TableCell align="center">{t("Common.Operation")}</TableCell>
-              )}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -99,21 +72,6 @@ export default function ITable(props: ITableProps) {
                   key={i}
                   sx={{
                     backgroundColor: theme.palette.common.white,
-                    border: 0,
-                    boxShadow:
-                      "4px 4px 8px 0px rgba(241, 243, 245, 0.8), -4px -1px 8px 0px rgba(241, 243, 245, 0.8)",
-                    "& td, & th": {
-                      border: 0,
-                    },
-                    "& td:first-of-type, & th:first-of-type": {
-                      borderRadius: "10px 0px 0px 10px",
-                    },
-                    "& td:last-child, & th:last-child": {
-                      borderRadius: "0px 10px 10px 0px",
-                    },
-                    "&:hover td": {
-                      backgroundColor: theme?.palette?.primary?.light,
-                    },
                   }}
                 >
                   {props.tableColumns.map((_e, i) => (
@@ -125,36 +83,15 @@ export default function ITable(props: ITableProps) {
                       />
                     </TableCell>
                   ))}
-                  {props.actions && (
-                    <TableCell>
-                      <Skeleton
-                        variant="rounded"
-                        height={30}
-                        animation="wave"
-                      />
-                    </TableCell>
-                  )}
                 </TableRow>
               ))}
 
             {props.isError && (
-              <TableRow
-                sx={{
-                  border: 0,
-                  "& td, & th": {
-                    border: 0,
-                    padding: 0,
-                  },
-                }}
-              >
+              <TableRow>
                 <TableCell
                   sx={{ p: 2 }}
                   align="center"
-                  colSpan={
-                    props.actions
-                      ? props.tableColumns.length + 1
-                      : props.tableColumns.length
-                  }
+                  colSpan={props.tableColumns.length}
                 >
                   <Alert
                     variant="filled"
@@ -170,26 +107,15 @@ export default function ITable(props: ITableProps) {
               <TableRow
                 sx={{
                   backgroundColor: theme.palette.common.white,
-                  border: 0,
-                  boxShadow:
-                    "4px 4px 8px 0px rgba(241, 243, 245, 0.8), -4px -1px 8px 0px rgba(241, 243, 245, 0.8)",
                   "&:last-child td, &:last-child th": {
                     border: 0,
-                  },
-                  "& td, & th": {
-                    border: 0,
-                    borderRadius: "10px",
                   },
                 }}
               >
                 <TableCell
                   sx={{ p: 2 }}
                   align="center"
-                  colSpan={
-                    props.actions
-                      ? props.tableColumns.length + 1
-                      : props.tableColumns.length
-                  }
+                  colSpan={props.tableColumns.length}
                 >
                   {props.emptyTableMessage}
                 </TableCell>
@@ -201,20 +127,9 @@ export default function ITable(props: ITableProps) {
                 <TableRow
                   sx={{
                     backgroundColor: theme.palette.common.white,
-                    border: 0,
-                    boxShadow:
-                      "4px 4px 8px 0px rgba(241, 243, 245, 0.8), -4px -1px 8px 0px rgba(241, 243, 245, 0.8)",
-                    "& td, & th": {
-                      border: 0,
-                    },
-                    "& td:first-of-type, & th:first-of-type": {
-                      borderRadius: "10px 0px 0px 10px",
-                    },
-                    "& td:last-child, & th:last-child": {
-                      borderRadius: "0px 10px 10px 0px",
-                    },
-                    "&:hover td": {
-                      backgroundColor: theme?.palette?.primary?.light,
+                    "&:last-child td, &:last-child th": { border: 0 },
+                    "&:nth-of-type(odd)": {
+                      backgroundColor: theme.palette.grey[100],
                     },
                   }}
                 >
@@ -233,35 +148,7 @@ export default function ITable(props: ITableProps) {
                       {row[header.field]}
                     </TableCell>
                   ))}
-                  {props.actions?.map((action, index) => (
-                    <TableCell
-                      align={"center"}
-                      //   sx={{ width: "10px" }}
-                      key={index}
-                    >
-                      <IconButton onClick={action.handler.bind(null, row.id)}>
-                        {action.icon}
-                      </IconButton>
-                    </TableCell>
-                  ))}
                 </TableRow>
-                {props.hasCollaps && (
-                  <TableRow>
-                    <TableCell
-                      style={{
-                        paddingBottom: 0,
-                        paddingTop: 0,
-                      }}
-                      colSpan={
-                        props.actions
-                          ? props.tableColumns.length + 1
-                          : props.tableColumns.length
-                      }
-                    >
-                      {row.description}
-                    </TableCell>
-                  </TableRow>
-                )}
               </React.Fragment>
             ))}
           </TableBody>

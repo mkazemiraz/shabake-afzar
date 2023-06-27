@@ -1,7 +1,11 @@
-import React from "react";
+import Prodcuts from "@cmp/products";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Prodcuts />
+    </>
+  );
 };
 
 export default Home;

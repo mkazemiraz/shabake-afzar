@@ -48,3 +48,9 @@ export type User = {
   image: string;
   token: string;
 };
+
+export type Product = {
+  id: number;
+  title: string;
+  price: string;
+};

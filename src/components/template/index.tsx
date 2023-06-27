@@ -22,8 +22,8 @@ const MainTemplate = () => {
           }}
         >
           <Toolbar />
-          <Box sx={{ px: 5, py: 3 }}>
-            <Box sx={{ py: 3 }}>
+          <Box sx={{ px: 5, py: 1 }}>
+            <Box>
               <Outlet />
             </Box>
           </Box>
