@@ -1,4 +1,4 @@
-import { IAxiosRTKQueryRequest, Product, User } from "@constants/GlobalTypes";
+import { IAxiosRTKQueryRequest, Product } from "@constants/GlobalTypes";
 import { appApi } from "./app";
 
 type ProductResponse = {
@@ -22,7 +22,21 @@ const productApi = appApi.injectEndpoints({
         };
       },
     }),
+    getPagingProduct: builder.mutation<ProductResponse, IAxiosRTKQueryRequest>({
+      query: ({ queryParams, options }) => {
+        return {
+          url: "auth/products",
+          method: "GET",
+          headers: {
+            ...options,
+            "Content-Type": "application/json",
+          },
+          params: { ...queryParams },
+        };
+      },
+    }),
   }),
 });
 
-export const { useGetAllProductQuery } = productApi;
+export const { useGetAllProductQuery, useGetPagingProductMutation } =
+  productApi;

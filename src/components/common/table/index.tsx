@@ -12,16 +12,7 @@ import {
   Box,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-interface ITableProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tableData: any[] | undefined; // data that shows in table
-  tableColumns: { title: string; field: string; style?: object }[]; // title: name of column, field: property name
-  tableLabel: string; // table label that uses for tests
-  emptyTableMessage: string; // message that shows when table is empty
-  tableStyle?: object;
-  isLoading?: boolean;
-  isError?: boolean;
-}
+import { ITableProps } from "@constants/GlobalTypes";
 
 export default function ITable(props: ITableProps) {
   const theme = useTheme();
@@ -98,7 +89,7 @@ export default function ITable(props: ITableProps) {
                     severity="error"
                     sx={{ justifyContent: "center" }}
                   >
-                    {t("ErrorMessages.RequestError")}
+                    {t("Messages.RequestError")}
                   </Alert>
                 </TableCell>
               </TableRow>
