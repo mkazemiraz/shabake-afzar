@@ -1,6 +1,5 @@
 import ITable from "@cmp/common/table";
 import { useGetAllProductQuery } from "@redux/api/product";
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Prodcuts = () => {
@@ -10,7 +9,6 @@ const Prodcuts = () => {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
-  console.log(data);
   return (
     <>
       <ITable
