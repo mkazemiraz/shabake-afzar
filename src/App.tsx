@@ -12,10 +12,11 @@ import { RouterProvider } from "react-router-dom";
 import Messages_En from "./i18n/Messages_En";
 import Messages_Fa from "./i18n/Messages_Fa";
 import MainRouter from "./routers/MainRouter";
-import { SnackbarProvider } from "@contexts/SnackbarContext";
+
 import { Provider } from "react-redux";
 import store from "@redux/Store";
 import ConfirmDialogProvider from "@contexts/ConfirmDialogContext";
+import SnackbarProvider from "@contexts/SnackbarContext";
 
 // Create rtl cache
 const cacheRtl = createCache({
@@ -23,9 +24,9 @@ const cacheRtl = createCache({
   stylisPlugins: [prefixer, rtlPlugin],
 });
 
-function RTL(props: React.PropsWithChildren) {
+const RTL = (props: React.PropsWithChildren) => {
   return <CacheProvider value={cacheRtl}>{props.children}</CacheProvider>;
-}
+};
 
 // Configure i18n //
 const i18nLanguageResources = {
@@ -46,7 +47,7 @@ i18n.use(I18next.initReactI18next).init({
   },
 });
 
-function App() {
+const App = () => {
   const theme = useMemo(
     () =>
       createTheme(
@@ -81,6 +82,6 @@ function App() {
       </Provider>
     </>
   );
-}
+};
 
 export default App;

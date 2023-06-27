@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import * as I18next from "react-i18next";
-export default function NotFound() {
+const NotFound = () => {
   const { t } = I18next.useTranslation();
 
   return (
@@ -25,4 +25,6 @@ export default function NotFound() {
       </Box>
     </Box>
   );
-}
+};
+
+export default NotFound;

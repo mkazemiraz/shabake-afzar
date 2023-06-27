@@ -1,7 +1,7 @@
 import { IPaginateProps } from "@constants/GlobalTypes";
 import { Pagination, PaginationItem } from "@mui/material";
 
-export default function IPaginate(props: IPaginateProps) {
+const IPaginate = (props: IPaginateProps) => {
   return (
     <>
       <Pagination
@@ -15,4 +15,6 @@ export default function IPaginate(props: IPaginateProps) {
       />
     </>
   );
-}
+};
+
+export default IPaginate;

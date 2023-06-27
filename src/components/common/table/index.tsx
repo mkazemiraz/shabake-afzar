@@ -14,7 +14,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { ITableProps } from "@constants/GlobalTypes";
 
-export default function ITable(props: ITableProps) {
+const ITable = (props: ITableProps) => {
   const theme = useTheme();
   const { t } = useTranslation();
   return (
@@ -147,4 +147,6 @@ export default function ITable(props: ITableProps) {
       </TableContainer>
     </>
   );
-}
+};
+
+export default ITable;

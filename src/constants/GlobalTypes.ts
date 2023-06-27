@@ -17,11 +17,14 @@ export interface IPageSetting {
   pageIndex: number;
   pageSize: number;
 }
-
 export interface ISnackbarState {
   message: string | undefined;
   type: AlertColor | undefined;
   isOpen: boolean;
+}
+
+export interface ISnackbarProps extends ISnackbarState {
+  closeHandler: () => void;
 }
 
 export interface IConfirmDialogProps {

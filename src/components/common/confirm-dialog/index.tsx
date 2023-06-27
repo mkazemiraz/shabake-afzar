@@ -13,7 +13,7 @@ import {
 import ClearIcon from "@mui/icons-material/Clear";
 import CheckIcon from "@mui/icons-material/Check";
 
-export default function IConfirmDialog(props: IConfirmDialogStates) {
+const IConfirmDialog = (props: IConfirmDialogStates) => {
   return (
     <Dialog open={props.isOpen} onClose={props.onClose}>
       <DialogTitle
@@ -50,4 +50,6 @@ export default function IConfirmDialog(props: IConfirmDialogStates) {
       </DialogContent>
     </Dialog>
   );
-}
+};
+
+export default IConfirmDialog;

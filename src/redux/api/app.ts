@@ -5,6 +5,5 @@ export const appApi = createApi({
   refetchOnFocus: true,
   refetchOnReconnect: true,
   baseQuery: axiosBaseQuery({ baseUrl: "https://dummyjson.com" }),
-  tagTypes: ["federations", "users"],
   endpoints: () => ({}),
 });

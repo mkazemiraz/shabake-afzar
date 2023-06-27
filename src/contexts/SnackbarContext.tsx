@@ -13,7 +13,7 @@ export const SnackbarDialog = createContext<{
   hideSnack: () => void;
 }>({ showSnack: () => {}, hideSnack: () => {} });
 
-export function SnackbarProvider(props: PropsWithChildren) {
+const SnackbarProvider = (props: PropsWithChildren) => {
   const [dialogStates, setDialogStates] = useState<ISnackbarState>({
     isOpen: false,
     type: undefined,
@@ -37,4 +37,6 @@ export function SnackbarProvider(props: PropsWithChildren) {
       <ISnackbar {...dialogStates} closeHandler={hideSnack} />
     </SnackbarDialog.Provider>
   );
-}
+};
+
+export default SnackbarProvider;

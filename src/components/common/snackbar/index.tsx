@@ -1,8 +1,9 @@
 import React from "react";
-import { Snackbar, Alert, AlertColor } from "@mui/material";
+import { Snackbar, Alert } from "@mui/material";
 import useSnackbar from "@hooks/useSnackbar";
+import { ISnackbarProps } from "@constants/GlobalTypes";
 
-export default function ISnackbar(props: ISnackbarProps) {
+const ISnackbar = (props: ISnackbarProps) => {
   const { hideSnack } = useSnackbar();
   const handleClose = (
     _event?: React.SyntheticEvent | Event,
@@ -33,11 +34,6 @@ export default function ISnackbar(props: ISnackbarProps) {
       </Snackbar>
     </>
   );
-}
-
-type ISnackbarProps = {
-  isOpen: boolean;
-  type: AlertColor | undefined;
-  message: string | undefined;
-  closeHandler: () => void;
 };
+
+export default ISnackbar;

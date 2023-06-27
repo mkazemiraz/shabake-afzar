@@ -1,5 +1,7 @@
 import React from "react";
 import { SnackbarDialog } from "@contexts/SnackbarContext";
-export default function useSnackbar() {
+const useSnackbar = () => {
   return React.useContext(SnackbarDialog);
-}
+};
+
+export default useSnackbar;
