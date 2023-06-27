@@ -5,9 +5,8 @@ import MainTemplate from "../components/template";
 import NotFound from "../components/common/NotFound";
 import CircularProgress from "@mui/material/CircularProgress";
 import Paths from "../constants/Paths";
-
-const Login = React.lazy(() => import("../pages/Login"));
-const Home = React.lazy(() => import("../pages/Home"));
+import Home from "@pages/Home";
+import Login from "@pages/Login";
 
 const router = createBrowserRouter([
   { path: Paths.LOGIN, element: <Login /> },
