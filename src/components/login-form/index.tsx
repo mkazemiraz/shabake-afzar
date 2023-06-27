@@ -109,7 +109,7 @@ const SigninForm = () => {
           size="large"
           startIcon={
             isLoading ? (
-              <CircularProgress size={20} color="secondary" />
+              <CircularProgress size={20} color="inherit" />
             ) : (
               <ExitToAppIcon />
             )
