@@ -39,11 +39,8 @@ const Prodcuts = () => {
           columnDefs={[
             {
               field: "id",
-              filter: "agTextColumnFilter",
+              filter: true,
               headerName: t("id"),
-              floatingFilterComponentParams: {
-                suppressFilterButton: true,
-              },
             },
             { field: "title", filter: true, headerName: t("title") },
             { field: "price", filter: true, headerName: t("price") },
