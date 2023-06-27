@@ -54,3 +54,20 @@ export type Product = {
   title: string;
   price: string;
 };
+
+export type IPaginateProps = {
+  onChange: (event: React.BaseSyntheticEvent, page: number) => void;
+  page: number;
+  count: number | undefined;
+};
+
+export type ITableProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tableData: any[] | undefined; // data that shows in table
+  tableColumns: { title: string; field: string; style?: object }[]; // title: name of column, field: property name
+  tableLabel: string; // table label that uses for tests
+  emptyTableMessage: string; // message that shows when table is empty
+  tableStyle?: object;
+  isLoading?: boolean;
+  isError?: boolean;
+};

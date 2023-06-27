@@ -20,5 +20,6 @@ export default {
     ThisFieldIsRequired: "این فیلد الزامی می‌باشد.",
     LoginSuccess: "با موفقیت وارد شدید.",
     LoginError: "نام کاربری  یا رمز عبور معتبر نیست.",
+    RequestError: "دریافت اطلاعات با خطا مواجه شده است. لطفا دوباره تلاش کنید.",
   },
 };

@@ -20,5 +20,6 @@ export default {
     ThisFieldIsRequired: "This field is required.",
     LoginSuccess: "You have successfully logged in.",
     LoginError: "Username or password is not valid.",
+    RequestError: "There was an error receiving information. Please try again.",
   },
 };
